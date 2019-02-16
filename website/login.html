@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Login page</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+
+	<script src="/http://connect.facebook.net/en_US/all.js#appId=130536797614895&xfbml=1">
+		FB.init({
+			appId   : '130536797614895',
+			status  : true, 
+			cookie  : true, 
+			xfbml   : true 
+		});
+		function callFBLogin(){
+			FB.login(function(response) {
+				if (response.authResponse) {
+					FB.api('/me', function(response) {
+						alert("Recieved information: "+JSON.stringify(response));
+        // You can send the required information to the server side for your custom needs
+        // (like creating a local user for the site when somebody logs into the system using 
+        // facebook first time etc) from here.
+    });
+				}else{
+					alert("Access not authorized.");
+				}
+			},{scope: 'email'});
+		}
+	</script>
+	<style type="text/css">
+	#form_div{
+		width: 40%;
+		position: relative;
+		font-family: Walter Turncoat;
+		font-size: 22px;
+		top: 150px;
+		padding: 20px;
+		background-color:#dcf4f7;
+		border-radius: 10px;
+	}
+	#login_button{
+		width: 100%;
+		background-color: #286870;
+		border-color: #286870; 
+	}
+	#form_text{
+		font-size: 16px;
+	}
+	a:link, a:visited, a:hover, a:active{
+		text-decoration: none;
+		color: black;
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="index.html"><img class="brand_img" src="../images/main_icon.png">JSP</a>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		</div> 
+	</nav>
+	<div id="form_div" class="container-fluid">
+		<form method="POST" action="../services/user_login.php">
+			<div class="form-group">
+				<label for="">Username</label>
+				<input type="text" class="form-control" id="" aria-describedby="" placeholder="Username" name="username" required="true">
+			</div>
+			<div class="form-group">
+				<label for="">Password</label>
+				<input type="password" class="form-control" id="" placeholder="Password" name="password" required="true">
+			</div>
+			<button type="button" class="btn btn-primary" id="FBlogin_button" onclick="callFBLogin()">Login with Facebook</button>
+			<p id="form_text" class="float-right"><a href="">Forgot Password?</a></p>
+			<button type="submit" class="btn btn-primary" id="login_button">Login</button>
+		</form>
+	</div>
+</body>
+</html>

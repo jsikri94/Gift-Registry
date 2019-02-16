@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Forgot Password</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+
+	<style type="text/css">
+	#form_div{
+		width: 40%;
+		position: relative;
+		font-family: Walter Turncoat;
+		font-size: 22px;
+		top: 150px;
+		padding: 20px;
+		background-color:#dcf4f7;
+		border-radius: 10px;
+	}
+	#login_button{
+		width: 100%;
+		background-color: #286870;
+		border-color: #286870; 
+	}
+	#form_text{
+		font-size: 16px;
+	}
+	a:link, a:visited, a:hover, a:active{
+		text-decoration: none;
+		color: black;
+	}
+</style>
+
+<script type="">
+	$(document).ready(function(){
+		$('#pwd, #c_pwd').on('keyup', function () {
+			if ($('#pwd').val() == $('#c_pwd').val()) {
+				$('#message').html('Matching').css('color', 'green');
+			} else 
+			$('#message').html('Not Matching').css('color', 'red');
+		});
+	});
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="index.html"><img class="brand_img" src="../images/main_icon.png">JSP</a>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		</div>	
+	</nav>
+	<div id="form_div" class="container-fluid">
+		<form method="POST" action="../services/forgot_pwd.php">
+			<div class="form-group">
+				<label for="">New Password*</label>
+				<input type="password" class="form-control" id="pwd" placeholder="Password" name="" required="true">
+			</div>
+			<div class="form-group">
+				<label for="">Confirm New Password*</label>
+				<input type="password" class="form-control" id="c_pwd" placeholder="Password" name="" required="true">
+				<span id="message"></span>
+			</div>
+			<button type="submit" class="btn btn-primary" id="login_button">Reset Password</button>
+		</form>
+	</div>
+</body>
+</html>

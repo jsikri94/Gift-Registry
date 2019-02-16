@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Create registry</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+
+	<style type="text/css">
+	#form_div{
+		width: 60%;
+		position: relative;
+		font-family: Walter Turncoat;
+		font-size: 22px;
+		top: 150px;
+		padding: 20px;
+		background-color:#dcf4f7;
+		border-radius: 10px;
+	}
+	#form_div p{
+		font-family: Walter Turncoat;
+		font-size: 28px;
+	}
+	#register_button{
+		width: 100%;
+		background-color: #286870;
+		border-color: #286870; 
+	}
+	#table1, #table2, th, thead, tbody,td{
+		border:1px solid black !important;
+	}
+	.table_div{
+		height: 300px;
+		overflow-y: auto;
+	}
+	
+
+</style>
+
+</style>
+<script >
+
+	function delRowFunc(rowNum){
+		var index = rowNum.parentNode.parentNode.rowIndex;
+		document.getElementById("contactUsTable").deleteRow(index);
+	}
+
+	$(document).ready(function(){
+		$("#add_item").click(function(){
+			$('<tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>').insertAfter("#table1>tbody>tr:last");
+		});
+	});
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="user.php"><img class="brand_img" src="../images/main_icon.png">JSP</a>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		</div>	
+	</nav>
+	<div id="form_div" class="container-fluid">
+		<form>
+			<p>Details</p>
+			<div class="form-group">
+				<label for="">Registry Name*</label>
+				<input type="text" class="form-control" id="" aria-describedby="" placeholder="Registry Name" required="true">
+			</div>
+			<div class="form-group">
+				<label for="">Registry Type*</label>
+				<input type="text" class="form-control" id="" placeholder="Last Name" required="true">
+			</div>
+			<br>
+			<br>
+			<p>Add Items</p>
+			<div class="table_div" >
+				<table id="table1" class="table text-center">
+					<thead>
+						<tr>
+							<th class="text-center">Item Name</th>
+							<th class="text-center">Cost</th>
+							<th class="text-center">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="filterable-cell">Ford</td>
+							<td class="filterable-cell">Escort</td>
+							<td class="filterable-cell">Blue</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford1</td>
+							<td class="filterable-cell">Escort1</td>
+							<td class="filterable-cell">Blue1</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford2</td>
+							<td class="filterable-cell">Escort2</td>
+							<td class="filterable-cell">Blue2</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford3</td>
+							<td class="filterable-cell">Escort3</td>
+							<td class="filterable-cell">Blue3</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford4</td>
+							<td class="filterable-cell">Escort4</td>
+							<td class="filterable-cell">Blue4</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford5</td>
+							<td class="filterable-cell">Escort5</td>
+							<td class="filterable-cell">Blue5</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford6</td>
+							<td class="filterable-cell">Escort6</td>
+							<td class="filterable-cell">Blue6</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford7</td>
+							<td class="filterable-cell">Escort7</td>
+							<td class="filterable-cell">Blue7</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+						<tr>
+							<td class="filterable-cell">Ford8</td>
+							<td class="filterable-cell">Escort8</td>
+							<td class="filterable-cell">Blue8</td>
+							<td><button id="" type="button" class="btn btn-success" onclick="(this)">Add Item</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+
+			<br>
+			<br>
+			<p>Sharing</p>
+			<div class="form-check text-center">
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="">
+					Make Public
+				</label>
+				<br>
+				<br>
+				<br>
+				OR
+				<br>
+				<br>
+				<br>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="">
+					User 1
+				</label>
+				<br>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="">
+					User 2
+				</label>
+				<br>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="">
+					User 3
+				</label>
+				<br>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="">
+					User 4
+				</label>
+				<br>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="">
+					User 5
+				</label>
+			</div>
+			<button type="submit" class="btn btn-primary" id="register_button">Create</button>
+		</form>
+	</div>
+</body>
+</html>

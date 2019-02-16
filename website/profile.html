@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Profile</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+
+	<style type="text/css">
+	#profile_div{
+		width: 40%;
+		position: relative;
+		font-family: Walter Turncoat;
+		font-size: 22px;
+		top: 200px;
+	}
+	.card-text{
+		font-size: 18px;
+	}
+	.card{
+		background-color:#dcf4f7;
+		border-radius: 10px;
+		border-color: #dcf4f7;
+	}
+	#create_modal{
+		font-family: Walter Turncoat;;
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="user.php"><img class="brand_img" src="../images/main_icon.png">JSP</a>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		</div>	
+	</nav>
+	<div class="container-fluid" id="profile_div">
+		<div class="card">
+			<div class="card-body">
+				<span data-toggle="tooltip" title="Edit Profile" >
+					<a href="" data-toggle="modal" data-target="#create_modal" ><img src="../images/edit.png" class="float-right"></a>
+				</span>
+					<h4 class="card-title">Jaahanavee Sikri</h4>
+					<p class="card-text">Age: 23</p>
+					<p class="card-text">Gender: Female</p>
+					<p class="card-text">Email ID: jaahanaveesikri@gmail.com</p>
+					<p class="card-text">Contact Number: 972-370-4886</p>
+					<p class="card-text">Registries: 3</p>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="create_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form method="GET" action="">
+							<div class="form-group">
+								<label for="">First Name</label>
+								<input type="text" class="form-control" id="" aria-describedby="" placeholder="First Name" name="fname">
+								<label for="">Last Name</label>
+								<input type="text" class="form-control" id="" aria-describedby="" placeholder="Last Name" name="lname">
+								<label for="">Age</label>
+								<input type="number" class="form-control" id="" aria-describedby="" placeholder="" name="age">
+								<label for="">Email ID</label>
+								<input type="email" class="form-control" id="" aria-describedby="" placeholder="Email ID" name="email">
+								<label for="">Contact Number</label>
+								<input type="tel" class="form-control" id="" aria-describedby="" placeholder="987654321" name="contact">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Edit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
